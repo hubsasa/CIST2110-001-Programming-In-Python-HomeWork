@@ -54,3 +54,10 @@ def test_is_leap_year():
     assert is_leap_year(2021) == False, "Leap year check failed for non-leap year"
     assert is_leap_year(2000) == True, "Leap year check failed for century leap year"
     assert is_leap_year(1900) == False, "Leap year check failed for century non-leap year"
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
+    pytest.main( ["-v", __file__])
