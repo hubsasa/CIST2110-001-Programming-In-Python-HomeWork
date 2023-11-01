@@ -1,6 +1,5 @@
 # HW4.py
-# Author:
-
+# Author: Zenab Iqbal 
 ### README
 # This file contains buggy functions that you need to fix.
 # There are 10 buggy functions in total.
@@ -16,8 +15,6 @@
 # 5: Missing colon
 # After you fix the function, you should run test.py to make sure that the function is fixed.
 
-
-
 def add(a:float, b:float) -> float:
     """Add two numbers together
 
@@ -28,9 +25,9 @@ def add(a:float, b:float) -> float:
     Returns:
         float: the sum of a and b
     """
-    return a - b
+    return a + b
 # Where is the bug in the buggy function?
-# A:
+# A: 28: The function is adding instead of subtracting
 
 def subtract(a:float, b:float) -> float:
     """Subtract two numbers
@@ -42,9 +39,9 @@ def subtract(a:float, b:float) -> float:
     Returns:
         float: the difference of a and b
     """
-    return a + b
+    return a - b
 # Where is the bug in the buggy function?
-# A:
+# A: 42: The function is adding instead of subtracting
 
 def divide(a, b):
     """Divide two numbers
@@ -56,9 +53,9 @@ def divide(a, b):
     Returns:
         float: the quotient of a and b
     """
-    return a * b
+    return a / b
 # Where is the bug in the buggy function?
-# A:
+# A: 56: multiplying instead of dividing
 
 
 def multiply(a:float, b:float) -> float:
@@ -71,10 +68,10 @@ def multiply(a:float, b:float) -> float:
     Returns:
         float: the product of a and b
     """
-    return a / b
+    return a * b
 
 # Where is the bug in the buggy function?
-# A:
+# A: 71: The funcation is dividing instead of multiplying
 
 
 def greet(name:str)->str:
@@ -86,9 +83,9 @@ def greet(name:str)->str:
     Returns:
         _type_: the greeting message
     """
-    return "Heloo, "+name+"!"
+    return "Hello, "+ name +"!"
 # Where is the bug in the buggy function?
-# A:
+# A: 86: The "Hello" is mispelled in the return 
 
 
 def square(num:int) -> int:
@@ -100,9 +97,9 @@ def square(num:int) -> int:
     Returns:
         int: the square of the number
     """
-    return num + num
+    return num * num
 # Where is the bug in the buggy function?
-# A:
+# A: 100: The funcation is adding instead of multiplying the numbers
 
 
 def is_even(num:int) -> bool:
@@ -114,9 +111,9 @@ def is_even(num:int) -> bool:
     Returns:
         bool: True if the number is even, False otherwise
     """
-    return num % 2 == 1
+    return num % 2 == 0
 # Where is the bug in the buggy function?
-# A:
+# A: 114: The return is checking for odd numbers instead of even
 
 
 def grade_calculator(score:float) -> str:
@@ -132,7 +129,7 @@ def grade_calculator(score:float) -> str:
         return "A"
     elif 80 <= score < 90:
         return "B"
-    elif 70 <= score < 79:
+    elif 70 <= score < 80:
         return "C"
     elif 60 <= score < 70:
         return "D"
@@ -141,7 +138,7 @@ def grade_calculator(score:float) -> str:
     else:
         return "Invalid Score"
 # Where is the bug in the buggy function?
-# A:
+# A: 135: The upper bound is less than 79 instead of less than 80
 
 def speed_check(speed:float) -> str:
     """Check if the speed is within the speed limit
@@ -155,14 +152,14 @@ def speed_check(speed:float) -> str:
     # Assuming general speed limits: min: 20, max: 70 (in mph)
     if speed < 20:  
         return "Too slow"
-    elif 20 <= speed <= 60:
+    elif 20 <= speed <= 65:
         return "Within limit"
-    elif speed > 70: 
+    elif speed > 65: 
         return "Over speed limit"
     else:
         return "Unknown"
 # Where is the bug in the buggy function?
-# A:
+# A: 155: The upper bound is greater than 70 when it should be 65 for speed limit
 
 def is_leap_year(year:int) -> bool:
     """Check if a year is a leap year
@@ -172,20 +169,20 @@ def is_leap_year(year:int) -> bool:
 
     Returns:
         bool: True if the year is a leap year, False otherwise
-    """
-    if year % 4 == 0:
+    """   
+    if year % 4 == 0 and year % 100 != 0:
         return True
-    elif year % 100 == 0:
-        return False
     elif year % 400 == 0:
         return True
     else:
         return False
 # Where is the bug in the buggy function?
-# A:
+# A: 173: The funcation needs to validate it as divisbile by 4 and not 100 or divisble by 400 for it to be a leap year
+
 
 def main():
     print("You are running me directly!")
 
 if __name__ == "__main__":
     main()
+
